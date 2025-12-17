@@ -24,19 +24,16 @@ jobs:
         with:
           node-version: 20
 
-
       - name: Install
-        working-directory: medical-test-master
         run: npm ci
 
       - name: Build
-        working-directory: medical-test-master
         run: npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: medical-test-master/dist
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
