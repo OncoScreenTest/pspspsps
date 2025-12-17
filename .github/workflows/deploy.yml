@@ -23,8 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: medical-test-master/package-lock.json
+
 
       - name: Install
         working-directory: medical-test-master
