@@ -116,7 +116,7 @@ const QuestionBlock = () => {
                 transition={{ duration: 0.25 }}
               >
                 <AnimatePresence mode="wait">
-                  <motion.div layout className="space-y-4">
+                  <motion.div layout className="space-y-4 max-w-4xl mx-auto">
                     {questionsToRender.map((q) => {
                       const selectedOptionId = getSelectedOption(q.id);
 
@@ -130,7 +130,7 @@ const QuestionBlock = () => {
                           transition={{ duration: 0.4 }}
                           layout
                         >
-                          <p className="font-semibold text-base md:text-lg mb-4 text-black">
+                          <p className="font-semibold text-base md:text-lg mb-4 text-black text-center">
                             {q.text}
                           </p>
 
