@@ -67,6 +67,13 @@ const QuestionBlock = () => {
     setScreen("start");
   };
 
+  const handleResetCurrentTest = () => {
+    setAnswers([]);
+    setFinalRecommendation(null);
+    setCurrentQuestionId(firstQuestionId);
+  };
+
+
   const answeredQuestions = answers
     .map((a) => getQuestionById(a.questionId))
     .filter(Boolean) as Question[];
@@ -92,7 +99,9 @@ const QuestionBlock = () => {
     <div className="w-full" ref={containerRef}>
       <div className="w-full rounded-3xl bg-white p-4 md:p-8 shadow-sm border border-blue-100">
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">
-          OncoScreen
+          {screen === "cervical" && "Скрининг на рак шейки матки"}
+          {screen === "breast" && "Скрининг на рак молочной железы"}
+          {screen === "start" && "OncoScreen"}
         </h1>
 
         <div className="pb-8">
@@ -197,21 +206,30 @@ const QuestionBlock = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="mt-6 flex items-center justify-between gap-4">
-                  <button
-                    onClick={handleBack}
-                    disabled={answers.length === 0}
-                    className="rounded-2xl bg-gray-200 text-blue-900 font-medium py-3 px-6 hover:bg-gray-300 disabled:opacity-50"
-                  >
-                    Назад
-                  </button>
-
+                <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                   <button
                     onClick={handleRestart}
-                    className="rounded-2xl bg-blue-200 text-blue-950 font-medium py-3 px-6 hover:bg-blue-300"
+                    className="rounded-2xl bg-gray-200 text-blue-950 font-medium py-3 px-6 hover:bg-gray-300"
                   >
-                    Начать заново
+                    ← Вернуться к выбору теста
                   </button>
+
+                  <div className="flex flex-col sm:flex-row gap-4 sm:justify-end">
+                    <button
+                      onClick={handleBack}
+                      disabled={answers.length === 0}
+                      className="rounded-2xl bg-gray-200 text-blue-950 font-medium py-3 px-6 hover:bg-gray-300 disabled:opacity-50"
+                    >
+                      Назад
+                    </button>
+
+                    <button
+                      onClick={handleResetCurrentTest}
+                      className="rounded-2xl bg-blue-200 text-blue-950 font-medium py-3 px-6 hover:bg-blue-300"
+                    >
+                      Начать заново
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )}
