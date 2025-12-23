@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite"; // Плагин Tailwind для Vit
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/pspspsps/", // Базовый путь для GitHub Pages (важно: должен совпадать с названием репозитория/папки)
+  base: '/pspspsps/', // Базовый путь для GitHub Pages (важно: должен совпадать с названием репозитория/папки)
   plugins: [tailwindcss(), react()], // Подключаем Tailwind и React плагины
 });
