@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // служебный файл для инкрементальной сборки
+    "target": "ES2022", // во что компилируем TS/JS (уровень JS)
+    "useDefineForClassFields": true, // корректная реализация class fields по стандарту
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // какие API доступны (JS + браузерные DOM)
+    "module": "ESNext", // модули оставляем современными (для bundler’а)
+    "skipLibCheck": true, // не проверять типы в node_modules (ускоряет)
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "moduleResolution": "bundler", // режим резолва модулей под Vite/бандлер
+    "allowImportingTsExtensions": true, // разрешает импорты вида ./file.ts
+    "verbatimModuleSyntax": true, // не переписывать импорты/экспорты
+    "moduleDetection": "force", // принудительно считать файлы модулями
+    "noEmit": true, // TypeScript не генерит JS (это делает Vite)
+    "jsx": "react-jsx", // JSX-трансформация под React 17+/19
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "strict": true, // строгий режим типов
+    "noUnusedLocals": true, // ошибка на неиспользуемые переменные
+    "noUnusedParameters": true, // ошибка на неиспользуемые параметры
+    "erasableSyntaxOnly": true, // ограничения на “стираемый” синтаксис
+    "noFallthroughCasesInSwitch": true, // запрет проваливания case без break
+    "noUncheckedSideEffectImports": true // подсветка импортов с побочными эффектами
   },
-  "include": ["src"]
+  "include": ["src"] // какие файлы относятся к “приложению”
 }

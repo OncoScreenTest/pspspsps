@@ -1,17 +1,18 @@
-@import "tailwindcss";
+@import "tailwindcss"; /* Подключение TailwindCSS через новый механизм импорта */
 
 #root {
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: left;
+  margin: 0 auto; /* Центрируем основной контейнер */
+  padding: 1rem; /* Отступы вокруг приложения на мобиле */
+  text-align: left; /* Базовое выравнивание текста (внутри отдельных блоков может быть text-center) */
 }
 
 @media (min-width: 768px) {
   #root {
-    padding: 2rem;
+    padding: 2rem; /* Больше отступов на десктопе */
   }
 }
 
+/* Ниже — стандартные стили из шаблона Vite (logo и анимации) */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -27,27 +28,28 @@
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Начало вращения */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Конец вращения */
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; /* Бесконечное вращение логотипа */
   }
 }
 
 .card {
-  padding: 2em;
+  padding: 2em; /* Карточка (из шаблона) */
 }
 
 .read-the-docs {
-  color: #888;
+  color: #888; /* Цвет вспомогательного текста */
 }
 
+/* Кастомные утилиты Tailwind (clamp) для адаптивных заголовков */
 @layer utilities {
   .text-7xl {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -81,12 +83,13 @@
     font-size: clamp(0.65rem, 1vw, 1.125rem);
   }
 }
-@theme {
-  --font-display: "Unbounded", serif;
-  --font-sans: "Roboto", sans-serif;
 
-  --color-black: rgba(54, 50, 45, 1);
-  --color-white: rgba(255, 253, 251, 1);
-  --color-red: rgba(154, 60, 62, 1);
-  --color-gray: rgba(103, 99, 95, 1);
+@theme {
+  --font-display: "Unbounded", serif; /* Шрифт для заголовков (если подключён) */
+  --font-sans: "Roboto", sans-serif; /* Шрифт для текста (если подключён) */
+
+  --color-black: rgba(54, 50, 45, 1); /* Основной цвет текста */
+  --color-white: rgba(255, 253, 251, 1); /* Белый */
+  --color-red: rgba(154, 60, 62, 1); /* Красный (если понадобится) */
+  --color-gray: rgba(103, 99, 95, 1); /* Серый */
 }

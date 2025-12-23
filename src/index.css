@@ -14,19 +14,18 @@
 } */
 
 a {
-  color: #646cff;
-  text-decoration: inherit;
+  color: #646cff; /* Цвет ссылок */
+  text-decoration: inherit; /* Убираем подчёркивание */
 }
 a:hover {
-  color: #535bf2;
+  color: #535bf2; /* Hover цвет ссылок */
 }
 
 body {
-  margin: 0;
-  /* Адаптив: не фиксируем центрирование по высоте — пусть страница растёт по контенту */
-  min-height: 100vh;
-  background-color: rgba(219, 236, 253, 1);
-  color: rgba(54, 50, 45, 1);
+  margin: 0; /* Убираем стандартные отступы */
+  min-height: 100vh; /* Высота страницы минимум на экран */
+  background-color: rgba(219, 236, 253, 1); /* Голубой фон страницы */
+  color: rgba(54, 50, 45, 1); /* Основной цвет текста */
 }
 /* 
 h1 {
@@ -35,15 +34,12 @@ h1 {
 } */
 
 button {
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  /* font-size: 1em;
-  font-weight: 500; */
-  cursor: pointer;
+  border-radius: 8px; /* Базовый радиус кнопок (в Tailwind у тебя чаще rounded-2xl) */
+  padding: 0.6em 1.2em; /* Базовые отступы кнопок (в Tailwind у тебя свои padding) */
+  cursor: pointer; /* Курсор для кликабельности */
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto -webkit-focus-ring-color; /* Доступность: обводка при фокусе */
 }
-

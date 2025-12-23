@@ -1,10 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react"; // StrictMode помогает ловить потенциальные проблемы в dev-режиме
+import { createRoot } from "react-dom/client"; // Новый API React 18 для рендера
+import "./index.css"; // Глобальные базовые стили (фон, body и т.п.)
+import App from "./App.tsx"; // Корневой компонент приложения
 
-createRoot(document.getElementById('root')!).render(
+// Создаём корень React в div#root (из index.html) и рендерим приложение
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <App /> {/* Запуск всего приложения */}
+  </StrictMode>
+);

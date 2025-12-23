@@ -1,25 +1,25 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2023",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo", // служебный build info
+    "target": "ES2023", // целевая версия JS для node-конфига
+    "lib": ["ES2023"], // библиотека API
+    "module": "ESNext", // оставляем ES-модули
+    "skipLibCheck": true, // не проверяем типы зависимостей
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "moduleResolution": "bundler", // совместимо с Vite-конфигом
+    "allowImportingTsExtensions": true, // можно импортировать .ts
+    "verbatimModuleSyntax": true, // сохраняем синтаксис модулей как есть
+    "moduleDetection": "force", // принудительно модульный режим
+    "noEmit": true, // не генерим JS
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "strict": true, // строгий режим
+    "noUnusedLocals": true, // неиспользуемые локальные — ошибка
+    "noUnusedParameters": true, // неиспользуемые параметры — ошибка
+    "erasableSyntaxOnly": true, // ограничения “стираемого” синтаксиса
+    "noFallthroughCasesInSwitch": true, // switch-case без break — ошибка
+    "noUncheckedSideEffectImports": true // контроль импортов с побочками
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts"] // этот tsconfig относится только к конфигу Vite
 }

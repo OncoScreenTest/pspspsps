@@ -1,7 +1,7 @@
 {
-  "files": [],
+  "files": [], // напрямую файлы не перечисляем — используем references ниже
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./tsconfig.app.json" }, // настройки TypeScript для кода приложения (src)
+    { "path": "./tsconfig.node.json" } // настройки TypeScript для node-части (vite.config.ts)
   ]
 }
