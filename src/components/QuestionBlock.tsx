@@ -144,9 +144,13 @@ const QuestionBlock = () => {
                           </p>
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {q.options.map((opt) => {
+                            {q.options.map((opt, index) => {
                               const isSelected = selectedOptionId === opt.id;
                               const isDisabled = !!selectedOptionId;
+
+                              const isLastOdd =
+                                q.options.length % 2 === 1 &&
+                                index === q.options.length - 1;
 
                               return (
                                 <button
@@ -162,6 +166,7 @@ const QuestionBlock = () => {
                                   className={`
                                     px-4 py-3 rounded-2xl border transition-all text-base md:text-lg
                                     break-words text-center whitespace-normal
+                                    ${isLastOdd ? "sm:col-span-2 sm:justify-self-center sm:w-1/2" : ""}
                                     ${
                                       isSelected
                                         ? "bg-blue-200 border-blue-300 text-blue-950"
@@ -206,15 +211,17 @@ const QuestionBlock = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center sm:justify-between gap-4">
+                  {/* Левая кнопка */}
                   <button
                     onClick={handleRestart}
-                    className="rounded-2xl bg-gray-200 text-blue-950 font-medium py-3 px-6 hover:bg-gray-300"
+                    className="rounded-2xl bg-gray-200 text-blue-950 font-medium py-3 px-6 hover:bg-gray-300 order-3 sm:order-1"
                   >
                     ← Вернуться к выбору теста
                   </button>
 
-                  <div className="flex flex-col sm:flex-row gap-4 sm:justify-end">
+                  {/* Правые кнопки */}
+                  <div className="flex flex-col sm:flex-row gap-4 sm:justify-end order-1 sm:order-2">
                     <button
                       onClick={handleBack}
                       disabled={answers.length === 0}
